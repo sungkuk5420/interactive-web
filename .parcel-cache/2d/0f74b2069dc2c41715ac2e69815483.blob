@@ -1,0 +1,57 @@
+let cursor_item;
+let x = 0;
+let y = 0;
+let mx = 0;
+let my = 0;
+let speed = 0.09;
+const pumpkinWrapper = document.querySelector(".pumpkin-wrapper");
+const leftTree = document.querySelector(".left-tree");
+const leftBottomObject = document.querySelector(".object-1");
+const logo = document.querySelector(".logo");
+const pumpkinLeftEyes = document.querySelector(".pumpkin__left-eyes");
+const pumpkinRightEyes = document.querySelector(".pumpkin__right-eyes");
+h1 = document.getElementsByTagName("h1")[0];
+
+window.onload = function () {
+  cursor_item = document.getElementsByClassName("cursor_item")[0];
+  window.addEventListener("mousemove", mouseFunc, false);
+
+  function mouseFunc(e) {
+    x = e.clientX - window.innerWidth / 2;
+    y = e.clientY - window.innerHeight / 2;
+  }
+
+  loop();
+};
+
+TweenMax.from(".logo", 1, {
+  y: "+=15",
+  yoyo: true,
+  repeat: -1
+});
+TweenMax.from(".left-tree", 1, {
+  x: "-=10",
+  y: "+=5",
+  yoyo: true,
+  repeat: -1
+});
+TweenMax.from(".right-tree", 1, {
+  x: "+=10",
+  y: "+=5",
+  yoyo: true,
+  repeat: -1
+});
+
+function loop() {
+  mx += (x - mx) * speed;
+  my += (y - my) * speed;
+  h1.innerHTML = "x: " + x + " mx: " + mx;
+  pumpkinLeftEyes.style.transform = `translate(${mx / (window.innerWidth / 25)}px, ${my / (window.innerHeight / 25)}px)`;
+  pumpkinRightEyes.style.transform = `translate(${mx / (window.innerWidth / 25)}px, ${my / (window.innerHeight / 25)}px)`; // pumpkinWrapper.style.transform = `translate(${mx/50}px, ${my/50}px)`;
+
+  pumpkinWrapper.style.transform = "translate3d(" + -(mx / 100) + "px," + -(my / 100) + "px,0) rotate3d(0,1,0," + mx / 100 + "deg)"; // logo.style.transform = "translate3d("+ (mx/50) +"px," + (my/20) +"px,0) rotate3d(0,1,0,"+ -mx / 30 +"deg)";
+
+  leftBottomObject.style.transform = `translate3d(${-mx / 20}px, ${-my / 20}px,0) rotate3d(0,1,${mx / 100}, 0deg)`; // leftTree.style.transform = `translate(${-mx/40}px)`;
+
+  window.requestAnimationFrame(loop);
+}

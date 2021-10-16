@@ -1,0 +1,12 @@
+body {
+        background-color: black;
+      }
+      h1 {
+        color: #fff;
+      }
+      .monster-image {
+        position: absolute;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+      }

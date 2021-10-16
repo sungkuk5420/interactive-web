@@ -1,0 +1,28 @@
+body {
+        background-color: black;
+      }
+      h1 {
+        color: #fff;
+      }
+      .monster-image {
+        position: absolute;
+        width: auto;
+        height: auto;
+        margin-left: -202.5px;
+        margin-top: -206px;
+      }
+      .pumpkin__left-eyes{
+          top: 120px;;
+      }
+      .pumpkin__right-eyes{
+      }
+      .pumpkin__left-eyes,
+      .pumpkin__right-eyes{
+          position: absolute;
+          background: yellow;
+          width: 5px;
+          height: 5px;
+      }
+      .pumpkin-wrapper{
+          position: relative;
+      }

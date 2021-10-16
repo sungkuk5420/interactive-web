@@ -1,0 +1,13 @@
+body {
+        background-color: black;
+      }
+      h1 {
+        color: #fff;
+      }
+      .monster-image {
+        position: absolute;
+        width: auto;
+        height: auto;
+        margin-left: -202.5px;
+        margin-top: -206px;
+      }

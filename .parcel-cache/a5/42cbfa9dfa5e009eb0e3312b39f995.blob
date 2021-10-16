@@ -1,0 +1,66 @@
+.object-1{
+        position: absolute;
+        z-index: 1;
+        bottom: 5vh;
+        right: 1vw;;
+      }
+      .logo{
+        position: absolute;
+        z-index: 1;
+        top: -7vh;
+        right: 0;
+        left: 0;
+        margin: auto;
+      }
+      body {
+          margin: 0;
+        overflow: hidden;
+        background-color: #312a2a;
+      }
+      h1 {
+          position: absolute;
+            color: #fff;
+      }
+      .bg-image{
+          position: fixed;
+          width:100%;
+          height: 100%;
+          background-image: url("./bg2.png");
+          background-size: cover;
+          background-position: center bottom;
+          background-repeat: no-repeat;
+      }
+      .monster-image {
+        position: absolute;
+        width: auto;
+        height: auto;
+        margin-left: -202.5px;
+        margin-top: -206px;
+      }
+      .pumpkin__left-eyes{
+        top: 30px;
+        left: -60px;
+      }
+      .pumpkin__right-eyes{
+        top: 30px;
+        left: 60px;
+      }
+      .pumpkin__left-eyes,
+      .pumpkin__right-eyes{
+          position: absolute;
+          background: yellow;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+      }
+      .pumpkin-wrapper{
+          position: fixed;
+          top:50%;
+          left: 50%;
+      }
+      .video{
+          width:150%;
+          transform: translate(-%,-25%);
+          z-index: 0;
+          position: fixed;
+      }

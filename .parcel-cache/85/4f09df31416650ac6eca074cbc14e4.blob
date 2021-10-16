@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style data-parcel-key="082e537e7364a9f141e77fd2eebc9518">
+      body {
+        background-color: black;
+      }
+      h1 {
+        color: #fff;
+      }
+      .cursor_item {
+        position: absolute;
+        width : 100px;
+        height : 100px;
+        background-color: red;
+        top:0;
+        left:0;
+      }
+    </style>
+    <script data-parcel-key="44a5d89f3943390ab55fabbd931f4236">
+
+        let cursor_item;
+        let x = 0;
+        let y = 0;
+        let mx = 0;
+        let my = 0;
+        window.onload = function(){
+          let h1 = document.getElementsByTagName("h1")[0];
+          let cursor_item = document.getElementsByClassName("cursor_item")[0]
+          window.addEventListener("mousemove",mouseFunc,false);
+
+          function mouseFunc(e){
+              h1.innerHTML = `x:${e.clientX} y: ${e.clientY}`;
+              cursor_item.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+          }
+          loop();
+        }
+
+
+        function loop(){
+            console.log(1)
+            window.requestAnimationFrame(loop);
+        }
+    </script>
+
+</head>
+<body>
+  <h1>test</h1>
+  <div class="cursor_item"></div>
+</body>
+</html>

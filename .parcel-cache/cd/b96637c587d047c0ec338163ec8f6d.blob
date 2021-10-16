@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style data-parcel-key="082e537e7364a9f141e77fd2eebc9518">
+      body {
+        background-color: black;
+      }
+      h1 {
+        color: #fff;
+      }
+      .monster-image {
+        position: absolute;
+        width: auto;
+        height: auto;
+        margin-left: -202.5px;
+        margin-top: -206px;
+      }
+      .pumpkin__left-eyes{
+        top: 35px;
+        left: -50px;
+      }
+      .pumpkin__right-eyes{
+        top: 35px;
+        left: 50px;
+      }
+      .pumpkin__left-eyes,
+      .pumpkin__right-eyes{
+          position: absolute;
+          background: yellow;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+      }
+      .pumpkin-wrapper{
+          position: fixed;
+          top:50%;
+          left: 50%;
+      }
+    </style>
+
+</head>
+<body>
+  
+    <div class="pumpkin-wrapper">
+        <img src="573a560fc2e03bc4f4d710e60d18abdc" alt="" srcset="1927c12db10945d367de53c607f2d673" id="pumpkin" class="monster-image">
+        <div class="pumpkin__left-eyes"></div>
+        <div class="pumpkin__right-eyes"></div>
+    </div>
+    
+    <script data-parcel-key="4320b8e524924abfcd207cf80310794a">
+
+        let cursor_item;
+        let x = 0;
+        let y = 0;
+        let mx = 0;
+        let my = 0;
+        let speed = 0.09;
+
+        const pumpkinWrapper = document.querySelector(".pumpkin-wrapper");
+        const pumpkinLeftEyes = document.querySelector(".pumpkin__left-eyes");
+        const pumpkinRightEyes = document.querySelector(".pumpkin__right-eyes");
+        window.onload = function(){
+          let h1 = document.getElementsByTagName("h1")[0];
+          cursor_item = document.getElementsByClassName("cursor_item")[0]
+          window.addEventListener("mousemove",mouseFunc,false);
+
+          function mouseFunc(e){
+              x = e.clientX;
+              y = e.clientY;
+          }
+          loop();
+        }
+
+
+        function loop(){
+
+            mx += (x-mx) *speed;
+            my += (y-my) *speed;
+            // pumpkinWrapper.style.transform = `translate(${mx}px, ${my}px)`;
+            pumpkinLeftEyes.style.transform = `translate(${mx/100}px, ${my/100}px)`;
+            pumpkinRightEyes.style.transform = `translate(${mx/100}px, ${my/100}px)`;
+            window.requestAnimationFrame(loop);
+        }
+    </script>
+</body>
+</html>

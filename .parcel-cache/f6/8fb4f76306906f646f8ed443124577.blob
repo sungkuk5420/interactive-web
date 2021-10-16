@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style data-parcel-key="082e537e7364a9f141e77fd2eebc9518">
+      body {
+        background-color: black;
+      }
+      h1 {
+        color: #fff;
+      }
+      .monster-image {
+        position: absolute;
+        width: 100%;
+        height: auto%;
+      }
+    </style>
+    <script data-parcel-key="44a5d89f3943390ab55fabbd931f4236">
+
+        let cursor_item;
+        let x = 0;
+        let y = 0;
+        let mx = 0;
+        let my = 0;
+        let speed = 0.09;
+
+        window.onload = function(){
+          let h1 = document.getElementsByTagName("h1")[0];
+          cursor_item = document.getElementsByClassName("cursor_item")[0]
+          window.addEventListener("click",mouseFunc,false);
+
+          function mouseFunc(e){
+              x = e.clientX;
+              y = e.clientY;
+              h1.innerHTML = `x:${x} y: ${y}`;
+          }
+          loop();
+        }
+
+
+        function loop(){
+
+            mx += (x-mx) *speed;
+            my += (y-my) *speed;
+            cursor_item.style.transform = `translate(${mx}px, ${my}px)`;
+            window.requestAnimationFrame(loop);
+        }
+    </script>
+
+</head>
+<body>
+  
+    <img src="3391c40f70781e06dfca2795f016ceab" alt="" srcset="1927c12db10945d367de53c607f2d673" id="pumpkin" class="monster-image">
+</body>
+</html>
