@@ -1,7 +1,7 @@
 {
-  "name": "interactive-web",
+  "name": "halloween",
   "version": "1.0.0",
-  "description": "",
+  "description": "halloween interactive web",
   "main": "index.js",
   "dependencies": {
     "parcel": "^2.0.0"
