@@ -1,5 +1,9 @@
 # interactive-web
+Parallax Web Site
 
+## Demo / 데모 / デモサイト
+![](https://github.com/sungkuk5420/translate-by-ocr/blob/main/preview.gif/) 
+  
 
 ### parcel init
 
